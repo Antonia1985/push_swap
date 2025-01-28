@@ -59,7 +59,7 @@ void	create_chunks(t_stack_array *a, int num_chunks, int *chunk_bounds)
 }
 
 void	push_values_of_each_chunk(t_stack_array *a, t_stack_array *b, int min,
-		int max, char **print_list)
+		int max)
 {
 	int	pushed;
 	int	to_push;
@@ -70,37 +70,37 @@ void	push_values_of_each_chunk(t_stack_array *a, t_stack_array *b, int min,
 	{
 		if (a->arr[0] >= min && a->arr[0] <= max)
 		{
-			pb(b, a, print_list);
+			pb(b, a);
 			if (b->arr[0] < (min + max) / 2 && b->size > 1)
-				rb(b, print_list);
+				rb(b);
 			pushed++;
 		}
 		else if (a->arr[a->size - 1] >= min && a->arr[a->size - 1] <= max)
 		{
-			rra(a, print_list);
-			pb(b, a, print_list);
+			rra(a);
+			pb(b, a);
 			if (b->arr[0] < (min + max) / 2 && b->size > 1)
-				rb(b, print_list);
+				rb(b);
 			pushed++;
 		}
 		else
-			ra(a, print_list);
+			ra(a);
 	}
 }
 
-void	sort_stack_b_descending_and_push(t_stack_array *b, t_stack_array *a, char **print_list)
+void	sort_stack_b_descending_and_push(t_stack_array *b, t_stack_array *a)
 {
 	int	max_pos;
 
 	while (b->size > 0)
 	{
 		max_pos = find_max_pos(b);
-		move_max_to_top(b, max_pos, print_list);
-		pa(a, b, print_list);
+		move_max_to_top(b, max_pos);
+		pa(a, b);
 	}
 }
 
-void	array_sort_big(t_stack_array *a, t_stack_array *b, char **print_list)
+void	array_sort_big(t_stack_array *a, t_stack_array *b)
 {
 	int	num_chunks;
 	int	*chunk_bounds;
@@ -108,11 +108,7 @@ void	array_sort_big(t_stack_array *a, t_stack_array *b, char **print_list)
 	int	min_val;
 	int	max_val;
 
-	if (a->size >=100 && a->size <= 200)
 	num_chunks = 5;
-	else
-	num_chunks =  9;
-
 	chunk_bounds = malloc(sizeof(int) * 2 * num_chunks);
 	if (!chunk_bounds)
 		exit(EXIT_FAILURE);
@@ -122,9 +118,9 @@ void	array_sort_big(t_stack_array *a, t_stack_array *b, char **print_list)
 	{
 		min_val = chunk_bounds[i * 2];
 		max_val = chunk_bounds[(i * 2) + 1];
-		push_values_of_each_chunk(a, b, min_val, max_val, print_list);
+		push_values_of_each_chunk(a, b, min_val, max_val);
 		i++;
 	}
-	sort_stack_b_descending_and_push(b, a, print_list);
+	sort_stack_b_descending_and_push(b, a);
 	free(chunk_bounds);
 }

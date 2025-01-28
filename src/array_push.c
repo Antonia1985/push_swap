@@ -55,7 +55,8 @@ int	pop(void *stack)
 	return (top_value);
 }
 
-static void	pop_push(t_stack_array *stack_to_push_in, t_stack_array *stack_to_pop)
+static void	pop_push(t_stack_array *stack_to_push_in,
+		t_stack_array *stack_to_pop)
 {
 	int	value;
 
@@ -66,16 +67,14 @@ static void	pop_push(t_stack_array *stack_to_push_in, t_stack_array *stack_to_po
 	}
 }
 
-void	pa(t_stack_array *stack_to_push_in, t_stack_array *stack_to_pop, char **print_list)
+void	pa(t_stack_array *stack_to_push_in, t_stack_array *stack_to_pop)
 {
 	pop_push(stack_to_push_in, stack_to_pop);
-	fill_print_list(print_list, "pa\n");
-	//ft_printf("pa\n");
+	ft_printf("pa\n");
 }
 
-void	pb(t_stack_array *stack_to_push_in, t_stack_array *stack_to_pop, char **print_list)
+void	pb(t_stack_array *stack_to_push_in, t_stack_array *stack_to_pop)
 {
 	pop_push(stack_to_push_in, stack_to_pop);
-	fill_print_list(print_list, "pb\n");
-	//ft_printf("pb\n");
+	ft_printf("pb\n");
 }

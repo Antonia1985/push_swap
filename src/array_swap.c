@@ -24,33 +24,21 @@ static void	swap(t_stack_array *stack)
 	}
 }
 
-void	sa(t_stack_array *stack, char **print_list)
+void	sa(t_stack_array *stack)
 {
-	if (stack->size > 1)
-	{
-		swap(stack);
-		fill_print_list(print_list, "sa\n");
-		//ft_printf("sa\n");
-	}
+	swap(stack);
+	ft_printf("sa\n");
 }
 
-void	sb(t_stack_array *stack, char **print_list)
+void	sb(t_stack_array *stack)
 {
-	if (stack->size > 1)
-	{
-		swap(stack);
-		fill_print_list(print_list, "sb\n");    
-		//ft_printf("sb\n");
-	}
+	swap(stack);
+	ft_printf("sb\n");
 }
 
-void	ss(t_stack_array *stack_a, t_stack_array *stack_b, char	**print_list)
+void	ss(t_stack_array *stack_a, t_stack_array *stack_b)
 {
-	if (stack_a->size > 1 && stack_b->size > 1)
-	{
-		fill_print_list(print_list, "ss\n"); 
-		swap(stack_a);
-		swap(stack_b);
-		//ft_printf("ss\n");
-	}
+	swap(stack_a);
+	swap(stack_b);
+	ft_printf("ss\n");
 }
