@@ -13,31 +13,31 @@
 #include "libft.h"
 #include "push_swap.h"
 
-void	start_sorting(void *stack_a, void *stack_b, int nums_size)
+void	start_sorting(void *stack_a, void *stack_b, int nums_size, char **print_list)
 {
 	t_stack_array	*a;
-	t_stack_array	*b;
+	t_stack_array	*b;	
 
 	a = (t_stack_array *)stack_a;
 	b = (t_stack_array *)stack_b;
 	if (nums_size == 2)
 	{
-		sort_2(a);
+		sort_2(a, print_list);
 	}
 	else if (nums_size == 3)
 	{
-		sort_3(a);
+		sort_3(a, print_list);
 	}
 	else if (nums_size == 4)
 	{
-		sort_4(a, b);
+		sort_4(a, b, print_list);
 	}
 	else if (nums_size == 5)
 	{
-		sort_5(a, b);
+		sort_5(a, b, print_list);
 	}
 	else if (nums_size > 5)
 	{
-		array_sort_big(a, b);
+		array_sort_big(a, b, print_list);
 	}
 }

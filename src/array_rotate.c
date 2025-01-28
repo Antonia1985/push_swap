@@ -31,21 +31,24 @@ static void	rotate(t_stack_array *stack)
 	}
 }
 
-void	ra(t_stack_array *stack)
+void	ra(t_stack_array *stack, char **print_list)
 {
 	rotate(stack);
-	ft_printf("ra\n");
+	fill_print_list(print_list, "ra\n");
+	//ft_printf("ra\n");
 }
 
-void	rb(t_stack_array *stack)
+void	rb(t_stack_array *stack, char **print_list)
 {
 	rotate(stack);
-	ft_printf("rb\n");
+	fill_print_list(print_list, "rb\n");
+	//ft_printf("rb\n");
 }
 
-void	rr(t_stack_array *stack_a, t_stack_array *stack_b)
+void	rr(t_stack_array *stack_a, t_stack_array *stack_b, char **print_list)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	ft_printf("rr\n");
+	fill_print_list(print_list, "rr\n");
+	//ft_printf("rr\n");
 }

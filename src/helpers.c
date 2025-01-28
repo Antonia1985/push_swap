@@ -85,7 +85,7 @@ int	find_max_pos(t_stack_array *b)
 	return (max_position);
 }
 
-void	move_max_to_top(t_stack_array *b, int max_pos)
+void	move_max_to_top(t_stack_array *b, int max_pos, char **print_list)
 {
 	int	i;
 
@@ -94,7 +94,7 @@ void	move_max_to_top(t_stack_array *b, int max_pos)
 		i = 0;
 		while (i < max_pos)
 		{
-			rb(b);
+			rb(b, print_list);
 			i++;
 		}
 	}
@@ -103,7 +103,7 @@ void	move_max_to_top(t_stack_array *b, int max_pos)
 		i = b->size;
 		while (i > max_pos)
 		{
-			rrb(b);
+			rrb(b, print_list);
 			i--;
 		}
 	}

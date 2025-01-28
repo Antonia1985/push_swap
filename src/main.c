@@ -47,7 +47,7 @@ static char	**parse_arguments(int argc, char **argv)
 	return (arg_array);
 }
 
-static void	handle_sorting(char **arg_array)
+static void	handle_sorting(char **arg_array, char **print_list)
 {
 	t_stack_array	*stack_a;
 	t_stack_array	*stack_b;
@@ -58,29 +58,39 @@ static void	handle_sorting(char **arg_array)
 		return ;
 	stack_a = initiallize_stack(nums_size);
 	if (!stack_a)
-		return ((void)print_error());
+		return (print_error());
 	stack_b = initiallize_stack(nums_size);
 	if (!stack_b)
 	{
 		free_stacks(stack_a, NULL);
-		return ((void)print_error());
+		return (print_error());
 	}
 	fill_stack_from_args(stack_a, nums_size, arg_array);
 	if (check_if_sorted(stack_a) == 0)
-		start_sorting(stack_a, stack_b, nums_size);
+		start_sorting(stack_a, stack_b, nums_size, print_list);
 	free_stacks(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
 {
 	char	**arg_array;
-
+	
 	arg_array = parse_arguments(argc, argv);
 	if (!arg_array)
-		return (print_error(), 1);
+		return (0);
 	if (!validate_arguments(arg_array))
 		return (print_error(), 1);
-	handle_sorting(arg_array);
+
+	char	**print_list; 
+	int nums_size = stack_array_size(arg_array);    
+	print_list = (char **)malloc(sizeof(char*) * nums_size * 100);
+	print_list[0] = NULL;
+	if (!print_list)
+		return (print_error(), 1);
+
+	handle_sorting(arg_array, print_list);
+	print_the_list(print_list);
+
 	if (is_argument_an_array(argv[1]))
 		free(arg_array);
 	return (0);

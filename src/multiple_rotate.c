@@ -13,28 +13,28 @@
 #include "libft.h"
 #include "push_swap.h"
 
-void	ra_2(t_stack_array *a)
+void	ra_2(t_stack_array *a, char **print_list)
 {
-	ra(a);
-	ra(a);
+	ra(a, print_list);
+	ra(a, print_list);
 }
 
-void	ra_3(t_stack_array *a)
+void	ra_3(t_stack_array *a, char **print_list)
 {
-	ra(a);
-	ra(a);
-	ra(a);
+	ra(a, print_list);
+	ra(a, print_list);
+	ra(a, print_list);
 }
 
-void	rb_2(t_stack_array *b)
+void	rb_2(t_stack_array *b, char **print_list)
 {
-	rb(b);
-	rb(b);
+	rb(b, print_list);
+	rb(b, print_list);
 }
 
-void	rb_3(t_stack_array *b)
+void	rb_3(t_stack_array *b, char **print_list)
 {
-	rb(b);
-	rb(b);
-	rb(b);
+	rb(b, print_list);
+	rb(b, print_list);
+	rb(b, print_list);
 }

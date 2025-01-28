@@ -26,6 +26,7 @@ SRC = src/main.c \
 		src/sort_5.c \
 		src/array_sort_big.c \
 		src/print_stuff.c \
+		src/print_operations_list_handler.c \
 		src/helpers.c \
 		src/multiple_push.c \
 		src/multiple_reverse_rotate.c \

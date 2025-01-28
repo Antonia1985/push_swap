@@ -13,28 +13,28 @@
 #include "libft.h"
 #include "push_swap.h"
 
-void	pb_2(t_stack_array *b, t_stack_array *a)
+void	pb_2(t_stack_array *b, t_stack_array *a, char **print_list)
 {
-	pb(b, a);
-	pb(b, a);
+	pb(b, a, print_list);
+	pb(b, a, print_list);
 }
 
-void	pa_2(t_stack_array *a, t_stack_array *b)
+void	pa_2(t_stack_array *a, t_stack_array *b, char **print_list)
 {
-	pa(a, b);
-	pa(a, b);
+	pa(a, b, print_list);
+	pa(a, b, print_list);
 }
 
-void	pb_3(t_stack_array *b, t_stack_array *a)
+void	pb_3(t_stack_array *b, t_stack_array *a, char **print_list)
 {
-	pb(b, a);
-	pb(b, a);
-	pb(b, a);
+	pb(b, a, print_list);
+	pb(b, a, print_list);
+	pb(b, a, print_list);
 }
 
-void	pa_3(t_stack_array *a, t_stack_array *b)
+void	pa_3(t_stack_array *a, t_stack_array *b, char **print_list)
 {
-	pa(a, b);
-	pa(a, b);
-	pa(a, b);
+	pa(a, b, print_list);
+	pa(a, b, print_list);
+	pa(a, b, print_list);
 }

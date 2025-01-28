@@ -13,8 +13,8 @@
 #include "libft.h"
 #include "push_swap.h"
 
-void	rra_2(t_stack_array *a)
+void	rra_2(t_stack_array *a, char **print_list)
 {
-	rra(a);
-	rra(a);
+	rra(a, print_list);
+	rra(a, print_list);
 }
