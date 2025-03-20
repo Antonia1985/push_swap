@@ -22,7 +22,7 @@ static void	rotate(t_stack_array *stack)
 	{
 		swap = stack->arr[0];
 		i = 0;
-		while (i < stack->size)
+		while (i < stack->size - 1)
 		{
 			stack->arr[i] = stack->arr[i + 1];
 			i++;

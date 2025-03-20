@@ -32,7 +32,7 @@ int	check_if_non_digit(char *num)
 	if (!num || *num == '\0')
 		return (0);
 	i = 0;
-	if (num[0] == '+' || num[0] == '-')
+	if ((num[0] == '+' || num[0] == '-') && num[1] != '\0')
 		i++;
 	while (num[i])
 	{
@@ -52,6 +52,10 @@ int	check_duplicate(char *num, char **numbers, size_t num_index)
 	i = 0;
 	while (i < num_index)
 	{
+		if (num[0] == '+')
+			num = num + 1;
+		if (numbers[i][0] == '+')
+			numbers[i] = numbers[i] + 1;
 		if (ft_strcmp(num, numbers[i]) == 0)
 		{
 			return (0);

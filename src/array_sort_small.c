@@ -70,26 +70,27 @@ void	sort_4(t_stack_array *a, t_stack_array *b)
 {
 	if (a->arr[1] < a->arr[0])
 		sa(a);
-	if (a->arr[2] < a->arr[1])
+	if (a->arr[2] < a->arr[1] || a->arr[3] < a->arr[2])
 	{
-		pb_3(b, a);
-		if (b->arr[0] < b->arr[2])
-			rb(b);
+		pb(b, a);
+		sort_3(a);
+		if (b->arr[0] < a->arr[0])
+			pa(a, b);
+		else if (b->arr[0] < a->arr[1])
+		{
+			pa(a, b);
+			sa(a);
+		}
+		else if (b->arr[0] < a->arr[2])
+		{
+			rra(a);
+			pa(a, b);
+			ra_2(a);
+		}
 		else
-			sb(b);
-		pa_3(a, b);
-	}
-	if (a->arr[3] < a->arr[0])
-		rra(a);
-	if (a->arr[3] < a->arr[1])
-	{
-		rra(a);
-		sa(a);
-	}
-	if (a->arr[3] < a->arr[2])
-	{
-		pb_2(b, a);
-		sa(a);
-		pa_2(a, b);
+		{
+			pa(a, b);
+			ra(a);
+		}
 	}
 }

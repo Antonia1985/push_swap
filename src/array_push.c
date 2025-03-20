@@ -46,7 +46,7 @@ int	pop(void *stack)
 		return (-1);
 	}
 	top_value = array_stack->arr[0];
-	while (i < array_stack->size)
+	while (i < array_stack->size - 1)
 	{
 		array_stack->arr[i] = array_stack->arr[i + 1];
 		i++;

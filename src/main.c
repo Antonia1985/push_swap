@@ -85,38 +85,3 @@ int	main(int argc, char **argv)
 		free(arg_array);
 	return (0);
 }
-
-/*int	main(int argc, char **argv)
-{
-	char			**arg_array;
-	int				nums_size;
-	t_stack_array	*stack_a;
-	t_stack_array	*stack_b;
-
-	arg_array = &argv[1];
-	if (argc == 1)
-		return (0);
-	if (is_argument_an_array(argv[1]))
-	{
-		arg_array = ft_split(argv[1], ' ');
-		if (!arg_array)
-			return (print_error(), 1);
-	}
-	if (!validate_arguments(arg_array))
-		return (print_error(), 1);
-	nums_size = stack_array_size(arg_array);
-	if (nums_size > 1)
-	{
-		stack_a = initiallize_stack(nums_size);
-		if (!stack_a)
-			return (print_error(), 1);
-		stack_b = initiallize_stack(nums_size);
-		if (!stack_b)
-			return (print_error(), 1);
-		fill_stack_from_args(stack_a, nums_size, arg_array);
-		if (check_if_sorted(stack_a) == 0)
-			start_sorting(stack_a, stack_b, nums_size);
-		free_stacks(stack_a, stack_b);
-	}
-	return (0);
-}*/
